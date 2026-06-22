@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeLab - Learn AI & Coding</title>
+    <meta name="description" content="EdgeLab Educational Portal - The ultimate destination to master coding and artificial intelligence.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="Contemporary Logo for EdgeLab.png" alt="EdgeLab Logo">
+            <span>EdgeLab</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="courses.html">Video Courses</a>
+            <a href="questions.html">Coding Questions</a>
+            <a href="#feedback" class="btn nav-cta">Give Feedback</a>
+        </div>
+    </nav>
+
+    <!-- Massive Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">🚀 New Course: Build AI Websites No-Code</div>
+        <h1>Master the Future with <br><span>EdgeLab</span></h1>
+        <p>Your one-stop destination for high-quality video tutorials, detailed notes, and curated coding questions. No fluff. Just practical, hands-on learning.</p>
+        <div class="hero-buttons">
+            <a href="courses.html" class="btn">Start Learning Now</a>
+            <a href="questions.html" class="btn btn-secondary">Solve Problems</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Why Learn With Us?</h2>
+            <p class="section-subtitle">We focus on what actually matters to get you building real-world projects instantly.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM12 22.1l-7-4V10.1l7 4l7-4v8zM12 12L5 8l7-4l7 4z"/></svg>
+                </div>
+                <h3>100% Practical</h3>
+                <p>No more boring theory. We build real applications from day one using modern stacks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8zm3-8.5h-2.5V7a.5.5 0 0 0-1 0v5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1z"/></svg>
+                </div>
+                <h3>Paced For You</h3>
+                <p>Pause, rewind, and re-watch at your own speed with our integrated video players.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 3.41L18.59 8H14zM18 20H6V4h6v6h6z"/></svg>
+                </div>
+                <h3>Premium Notes</h3>
+                <p>Download our beautifully crafted PDF study materials attached to every single video.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section id="feedback" class="form-section">
+        <div class="section-header">
+            <h2 class="section-title">Request a Video</h2>
+            <p class="section-subtitle">What should we teach next? Drop your suggestions below!</p>
+        </div>
+        <div class="contact-container">
+            <form onsubmit="event.preventDefault(); alert('Thanks for the suggestion! (Demo Mode)');">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>What topic do you want to learn?</label>
+                    <input type="text" placeholder="e.g. Next.js App Router" required>
+                </div>
+                <div class="form-group">
+                    <label>Any specific details?</label>
+                    <textarea rows="4" placeholder="Tell us exactly what you want to build..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <img src="Contemporary Logo for EdgeLab.png" alt="EdgeLab Logo">
+                    <span>EdgeLab</span>
+                </div>
+                <p>We empower developers and AI enthusiasts with the best educational content on the internet.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="questions.html">Practice Questions</a>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <a href="#">YouTube</a>
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EdgeLab Education. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

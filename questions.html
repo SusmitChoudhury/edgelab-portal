@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdgeLab - Practice Questions</title>
+    <meta name="description" content="Sharpen your coding skills with EdgeLab's curated list of algorithm questions.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="Contemporary Logo for EdgeLab.png" alt="EdgeLab Logo">
+            <span>EdgeLab</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Video Courses</a>
+            <a href="questions.html" class="active">Coding Questions</a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-container">
+        <div style="margin-bottom: 3rem; text-align: center;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Practice & <span style="color: var(--accent-color);">Prepare</span></h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Master these hand-picked coding questions ranging from Easy to Hard to prepare for top-tier software engineering interviews.</p>
+        </div>
+
+        <div class="filters" id="filters-container">
+            <button class="filter-btn active" data-filter="all">All Difficulties</button>
+            <button class="filter-btn" data-filter="easy">Easy</button>
+            <button class="filter-btn" data-filter="medium">Medium</button>
+            <button class="filter-btn" data-filter="hard">Hard</button>
+        </div>
+        
+        <!-- Questions List Container -->
+        <div id="questions-container">
+            <!-- Questions will be injected here by app.js -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <img src="Contemporary Logo for EdgeLab.png" alt="EdgeLab Logo">
+                    <span>EdgeLab</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="questions.html">Practice Questions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EdgeLab Education. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

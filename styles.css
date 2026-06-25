@@ -72,15 +72,20 @@ nav {
 }
 
 .logo-container img {
-    height: 45px;
+    height: 65px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover img {
+    transform: scale(1.05);
 }
 
 .logo-container span {
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .nav-links {

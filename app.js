@@ -82,19 +82,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Render Questions (questions.html) ---
     const questionsContainer = document.getElementById('questions-container');
-    const filtersContainer = document.getElementById('filters-container');
+    const difficultyFilters = document.getElementById('difficulty-filters');
+    const topicSelect = document.getElementById('topic-select');
 
     if (questionsContainer && typeof siteData !== 'undefined' && siteData.questions) {
         
-        const renderQuestions = (filter = 'all') => {
+        let currentDifficulty = 'all';
+        let currentTopic = 'all';
+
+        // Populate Topic Dropdown
+        if (topicSelect) {
+            // Get unique topics while preserving insertion order
+            const topics = [...new Set(siteData.questions.map(q => q.category))];
+            topics.forEach(topic => {
+                if (topic && topic !== "General") {
+                    const option = document.createElement('option');
+                    option.value = topic;
+                    option.textContent = topic;
+                    option.style.color = 'black'; // Make sure options are visible in dropdown
+                    topicSelect.appendChild(option);
+                }
+            });
+
+            topicSelect.addEventListener('change', (e) => {
+                currentTopic = e.target.value;
+                renderQuestions();
+            });
+        }
+
+        const renderQuestions = () => {
             questionsContainer.innerHTML = '';
             
-            const filteredQuestions = siteData.questions.filter(q => 
-                filter === 'all' ? true : q.difficulty.toLowerCase() === filter
-            );
+            const filteredQuestions = siteData.questions.filter(q => {
+                const matchDiff = currentDifficulty === 'all' ? true : q.difficulty.toLowerCase() === currentDifficulty;
+                const matchTopic = currentTopic === 'all' ? true : q.category === currentTopic;
+                return matchDiff && matchTopic;
+            });
 
             if (filteredQuestions.length === 0) {
-                questionsContainer.innerHTML = '<p style="text-align:center; color: var(--text-muted);">No questions found for this difficulty.</p>';
+                questionsContainer.innerHTML = '<p style="text-align:center; color: var(--text-muted);">No questions found for the selected filters.</p>';
                 return;
             }
 
@@ -109,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="tag ${tagClass}">${q.difficulty}</span>
                         <div>
                             <h3 style="font-size: 1.1rem; margin-bottom: 0.2rem;">${q.title}</h3>
-                            <span style="color: var(--text-muted); font-size: 0.9rem;">Category: ${q.category || 'General'}</span>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Category: <span style="color: var(--accent-color);">${q.category || 'General'}</span></span>
                         </div>
                     </div>
                     <a href="${q.link}" target="_blank" class="btn btn-secondary">Solve Problem</a>
@@ -122,9 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial Render
         renderQuestions();
 
-        // Handle Filters
-        if (filtersContainer) {
-            const btns = filtersContainer.querySelectorAll('.filter-btn');
+        // Handle Difficulty Filters
+        if (difficultyFilters) {
+            const btns = difficultyFilters.querySelectorAll('.filter-btn');
             btns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     // Update active class
@@ -132,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.target.classList.add('active');
                     
                     // Render based on filter
-                    const filterValue = e.target.getAttribute('data-filter');
-                    renderQuestions(filterValue);
+                    currentDifficulty = e.target.getAttribute('data-filter');
+                    renderQuestions();
                 });
             });
         }

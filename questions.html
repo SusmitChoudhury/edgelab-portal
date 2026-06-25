@@ -28,11 +28,17 @@
             <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Master these hand-picked coding questions ranging from Easy to Hard to prepare for top-tier software engineering interviews.</p>
         </div>
 
-        <div class="filters" id="filters-container">
-            <button class="filter-btn active" data-filter="all">All Difficulties</button>
-            <button class="filter-btn" data-filter="easy">Easy</button>
-            <button class="filter-btn" data-filter="medium">Medium</button>
-            <button class="filter-btn" data-filter="hard">Hard</button>
+        <div class="filters" id="filters-container" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+            <div id="difficulty-filters" style="display: flex; gap: 0.5rem;">
+                <button class="filter-btn active" data-filter="all">All Difficulties</button>
+                <button class="filter-btn" data-filter="easy">Easy</button>
+                <button class="filter-btn" data-filter="medium">Medium</button>
+                <button class="filter-btn" data-filter="hard">Hard</button>
+            </div>
+            <select id="topic-select" style="padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255, 255, 255, 0.05); color: white; font-family: 'Inter', sans-serif; cursor: pointer;">
+                <option value="all" style="color: black;">All Topics</option>
+                <!-- Topics will be dynamically injected here -->
+            </select>
         </div>
         
         <!-- Questions List Container -->

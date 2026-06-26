@@ -16,12 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (playerWrapper && videoDetails && playlistContainer && typeof siteData !== 'undefined') {
         
-        // Determine which video to play. Default to first video.
-        let activeVideoId = parseInt(getQueryParam('v')) || siteData.videos[0].id;
+        // Determine which video to play. Default to the latest (last) video.
+        const latestVideo = siteData.videos[siteData.videos.length - 1];
+        let activeVideoId = parseInt(getQueryParam('v')) || latestVideo.id;
         let activeVideo = siteData.videos.find(v => v.id === activeVideoId);
         
         // Fallback if ID is invalid
-        if (!activeVideo) activeVideo = siteData.videos[0];
+        if (!activeVideo) activeVideo = latestVideo;
 
         // 1. Inject YouTube Iframe
         if (activeVideo.youtubeId) {
@@ -56,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ${materialsHTML.length > 0 ? `<h3 style="margin-bottom: 1rem;">Study Materials</h3>${materialsHTML}` : ''}
         `;
 
-        // 3. Inject Playlist (Sidebar)
-        siteData.videos.forEach(video => {
+        // 3. Inject Playlist (Sidebar) - newest first
+        [...siteData.videos].reverse().forEach(video => {
             // Don't show the currently playing video in the sidebar
             if (video.id === activeVideo.id) return;
 

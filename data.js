@@ -17,6 +17,25 @@ const siteData = {
                     type: "pdf"
                 }
             ]
+        },
+        {
+            id: 2,
+            title: "Python Mastery Course 2026 - Part 1",
+            youtubeId: "TuqqsHPjzyA", 
+            thumbnail: "https://img.youtube.com/vi/TuqqsHPjzyA/maxresdefault.jpg",
+            description: "Dive into the Python Mastery Course. Watch the video and download the associated Handbook and PPT notes.",
+            materials: [
+                {
+                    name: "Video 1 PPT",
+                    fileName: "VIDEO 1 PPT Python Mastery Course 2026.pptx",
+                    type: "pptx"
+                },
+                {
+                    name: "Python HANDBOOK",
+                    fileName: "FINAL PYTHON HANDBOOK.pdf.pdf",
+                    type: "pdf"
+                }
+            ]
         }
     ],
 
